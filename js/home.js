@@ -1,5 +1,6 @@
 // Add Money Feature Calculation
 const setPin = 1234;
+const numberRegex = /^[0-9]+$/
 document.getElementById('add-money-btn').addEventListener('click',(event) => {
     event.preventDefault();
     const availableBalance = parseInt(document.getElementById("available-balance").innerText);
@@ -11,11 +12,11 @@ document.getElementById('add-money-btn').addEventListener('click',(event) => {
         alert("Please select a Bank")
         return;
     }
-    if(accountNumber.length < 11){
+    if(accountNumber.length < 11  && (!numberRegex.test(accountNumber))){
         alert("Please Provide a valid account number")
         return;
     }
-    if(isNaN(addAmount)){
+    if(isNaN(addAmount) || addAmount <= 0){
     alert("Provide valid amount")
     return;
     }
@@ -38,11 +39,11 @@ document.getElementById("withdraw-btn").addEventListener("click",function(event)
     const pinNumber = parseInt(document.getElementById("cashout-pin-number").value);
     console.log(availableBalance,agentNumber,cashOutAmount,pinNumber)
 
-    if(agentNumber.length < 11){
+    if(agentNumber.length < 11 && (!numberRegex.test(agentNumber))){
         alert("Please Provide a valid agent number ");
         return;
     }
-    if(isNaN(cashOutAmount)){
+    if(isNaN(cashOutAmount) || cashOutAmount <= 0){
         alert("Provide valid amount");
         return;
     }
@@ -63,11 +64,11 @@ document.getElementById("transfer-money-btn").addEventListener("click", function
     const transferAmount = parseInt(document.getElementById("transfer-amount").value);
     const transferPin = parseInt(document.getElementById("transfer-pin-number").value);
 
-    if(userAccountNumber.length < 11){
+    if(userAccountNumber.length < 11 && (!numberRegex.test(userAccountNumber))){
         alert("Provide valid user account number");
         return;
     }
-    if(isNaN(transferAmount)){
+    if(isNaN(transferAmount) || transferAmount <= 0){
         alert("Provide valid amount");
         return;
     }
@@ -100,11 +101,11 @@ document.getElementById("pay-bill-btn").addEventListener("click", function(event
         alert("Fill-Up the select option");
         return;
     }
-    if(billerNumber.length < 11){
+    if(billerNumber.length < 11 && (!numberRegex.test(billerNumber))){
         alert("Provide valid biller account number");
         return;
     }
-    if(isNaN(payAmount)){
+    if(isNaN(payAmount) || payAmount <= 0){
         alert("Provide valid amount");
         return;
     }
