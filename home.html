@@ -16,7 +16,7 @@
     <main class="max-w-md mx-auto bg-white rounded-b-2xl pb-7 ">
         <!-- Header  -->
         <section>
-        <nav class="flex justify-between items-center border-b-1 border-gray-400 pb-4">
+        <nav class="flex justify-between items-center border-b-1 border-gray-400 pt-3 pb-4">
             <div class="flex justify-center items-center gap-3 pl-4">
                 <img src="./assets/Group.png" alt="" class="h-[50px]">
                 <div>
@@ -83,15 +83,15 @@
                 </div>
                 <div>
                     <label for="" class="font-semibold">Bank Account Number</label><br>
-                    <input id="account-number" type="text" placeholder="Enter 11 digit account number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
+                    <input id="account-number" type="number" placeholder="Enter 11 digit account number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
                 </div>
                  <div class="mt-4">
                     <label for="" class="font-semibold">Amount to Add</label><br>
-                    <input id="add-amount" type="text" placeholder="Add amount to withdraw" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
+                    <input id="add-amount" type="number" placeholder="Add amount to withdraw" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
                  </div>
                  <div class="mt-4">
                     <label for="" class="font-semibold">Pin Number</label><br>
-                    <input id="pin-number" type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
+                    <input id="pin-number" type="number" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
                  </div>
                 <button id="add-money-btn" class="btn bg-[#0874f2] text-white w-full rounded-3xl mt-6">Add Money</button>               
             </form>
@@ -104,17 +104,17 @@
             <form class="rounded-xl w-102 px-8 bg-white py-5">
                 <div>
                     <label for="" class="font-semibold">Agent Number</label><br>
-                    <input id="account-number" type="text" placeholder="Enter 11 digit number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
+                    <input id="agent-number" type="number" placeholder="Enter 11 digit number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
                 </div>
                  <div class="mt-4">
                     <label for="" class="font-semibold">Amount</label><br>
-                    <input id="add-amount" type="text" placeholder="Enter amount to withdraw" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
+                    <input id="cashout-amount" type="number" placeholder="Enter amount to withdraw" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
                  </div>
                  <div class="mt-4">
                     <label for="" class="font-semibold">Pin Number</label><br>
-                    <input id="pin-number" type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
+                    <input id="cashout-pin-number" type="number" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
                  </div>
-                <button id="add-money-btn" class="btn bg-[#0874f2] text-white w-full rounded-3xl mt-6">Cash Out</button>               
+                <button id="withdraw-btn" class="btn bg-[#0874f2] text-white w-full rounded-3xl mt-6">Cash Out</button>               
             </form>
         </div>
 
@@ -124,17 +124,17 @@
             <form class="rounded-xl w-102 px-8 bg-white py-5">
                 <div>
                     <label for="" class="font-semibold">User Account Number</label><br>
-                    <input id="account-number" type="text" placeholder="Enter user account number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
+                    <input id="user-account-number" type="number" placeholder="Enter user account number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
                 </div>
                  <div class="mt-4">
                     <label for="" class="font-semibold">Amount</label><br>
-                    <input id="add-amount" type="text" placeholder="Enter amount to withdraw" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
+                    <input id="transfer-amount" type="number" placeholder="Enter amount to withdraw" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
                  </div>
                  <div class="mt-4">
                     <label for="" class="font-semibold">Pin Number</label><br>
-                    <input id="pin-number" type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
+                    <input id="transfer-pin-number" type="number" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
                  </div>
-                <button id="add-money-btn" class="btn bg-[#0874f2] text-white w-full rounded-3xl mt-6">Send Now</button>               
+                <button id="transfer-money-btn" class="btn bg-[#0874f2] text-white w-full rounded-3xl mt-6">Send Now</button>               
             </form>
         </div>
         <!-- Get Bonus  -->
@@ -144,9 +144,9 @@
             <form class="rounded-xl w-102 px-8 bg-white py-5">
                 <div>
                     <label for="" class="font-semibold">Bonus Coupon</label><br>
-                    <input id="account-number" type="text" placeholder="Enter bonus coupon" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
+                    <input id="bonus-coupon" type="number" placeholder="Enter bonus coupon" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
                 </div>
-                <button id="add-money-btn" class="btn bg-[#0874f2] text-white w-full rounded-3xl mt-6">Get Bonus</button>               
+                <button id="get-bonus-btn" class="btn bg-[#0874f2] text-white w-full rounded-3xl mt-6">Get Bonus</button>               
             </form>
         </div>
 
@@ -157,7 +157,7 @@
             <form class="rounded-xl w-102 px-8 bg-white py-5">
                 <div>
                     <label for="" class="font-semibold">Select to Pay</label><br>
-                    <select id="bank" class="select bg-[#f4f5f7] rounded-3xl my-3 w-full">
+                    <select id="select-pay" class="select bg-[#f4f5f7] rounded-3xl my-3 w-full">
                         <option>Select Pay</option>
                         <option>Current Bill</option>
                         <option>Gash Bill</option>
@@ -167,17 +167,17 @@
                 </div>
                 <div>
                     <label for="" class="font-semibold">Biller Account Number</label><br>
-                    <input id="account-number" type="text" placeholder="Enter account number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
+                    <input id="biller-number" type="number" placeholder="Enter account number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
                 </div>
                  <div class="mt-4">
-                    <label for="" class="font-semibold">Account to Pay</label><br>
-                    <input id="add-amount" type="text" placeholder="Add amount to pay" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
+                    <label for="" class="font-semibold">Amount to Pay</label><br>
+                    <input id="pay-amount" type="number" placeholder="Add amount to pay" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
                  </div>
                  <div class="mt-4">
-                    <label for="" class="font-semibold">Pin Number</label><br>
-                    <input id="pin-number" type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
+                    <label for="" type="number" class="font-semibold">Pin Number</label><br>
+                    <input id="bill-pin-number" type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7] rounded-3xl mt-3 w-full" />
                  </div>
-                <button id="add-money-btn" class="btn bg-[#0874f2] text-white w-full rounded-3xl mt-6">Pay Now</button>               
+                <button id="pay-bill-btn" class="btn bg-[#0874f2] text-white w-full rounded-3xl mt-6">Pay Now</button>               
             </form>
         </div>
 

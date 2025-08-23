@@ -1,3 +1,4 @@
+// Add Money Feature Calculation
 const setPin = 1234;
 document.getElementById('add-money-btn').addEventListener('click',(event) => {
     event.preventDefault();
@@ -14,11 +15,10 @@ document.getElementById('add-money-btn').addEventListener('click',(event) => {
         alert("Please Provide a valid account number")
         return;
     }
-    // if(typeof addAmount !== "number"){
-    //     alert("Provide valid amount")
-    //     return;
-    // }
-
+    if(isNaN(addAmount)){
+    alert("Provide valid amount")
+    return;
+    }
     if(pin !== setPin){
         alert("Incorrect Pin Number")
         return;
@@ -26,6 +26,96 @@ document.getElementById('add-money-btn').addEventListener('click',(event) => {
     const totalAmount = availableBalance + addAmount
     // availableBalance.innerText = totalAmount;
     document.getElementById("available-balance").innerText = totalAmount
+})
+
+
+// Cash Out Feature Calculation
+document.getElementById("withdraw-btn").addEventListener("click",function(event){
+    event.preventDefault();
+    const availableBalance = parseInt(document.getElementById("available-balance").innerText);
+    const agentNumber = document.getElementById("agent-number").value;
+    const cashOutAmount = parseInt(document.getElementById("cashout-amount").value);
+    const pinNumber = parseInt(document.getElementById("cashout-pin-number").value);
+    console.log(availableBalance,agentNumber,cashOutAmount,pinNumber)
+
+    if(agentNumber.length < 11){
+        alert("Please Provide a valid agent number ");
+        return;
+    }
+    if(isNaN(cashOutAmount)){
+        alert("Provide valid amount");
+        return;
+    }
+    if(pinNumber !== setPin){
+        alert("Invalid pin number")
+    }
+    const newBalance = availableBalance - cashOutAmount;
+    document.getElementById("available-balance").innerText = newBalance;
+})
+
+
+// Transfer Money feature calculation
+
+document.getElementById("transfer-money-btn").addEventListener("click", function(event){
+    event.preventDefault();
+    const availableBalance = parseInt(document.getElementById("available-balance").innerText);
+    const userAccountNumber = document.getElementById("user-account-number").value;
+    const transferAmount = parseInt(document.getElementById("transfer-amount").value);
+    const transferPin = parseInt(document.getElementById("transfer-pin-number").value);
+
+    if(userAccountNumber.length < 11){
+        alert("Provide valid user account number");
+        return;
+    }
+    if(isNaN(transferAmount)){
+        alert("Provide valid amount");
+        return;
+    }
+    if(transferPin !== setPin){
+        alert("Provide valid pin");
+        return;
+    }
+    const remainingAmount = availableBalance - transferAmount;
+    document.getElementById("available-balance").innerText = remainingAmount;
+})
+
+
+// Get Bonus feature calculation 
+
+document.getElementById("get-bonus-btn").addEventListener("click", function(event){
+    event.preventDefault();
+})
+
+
+// Pay Bill feature calculation 
+
+document.getElementById("pay-bill-btn").addEventListener("click", function(event){
+    event.preventDefault();
+    const availableBalance = parseInt(document.getElementById("available-balance").innerText);
+    const paySelect = document.getElementById("select-pay").value;
+    const billerNumber = document.getElementById("biller-number").value;
+    const payAmount = parseInt(document.getElementById("pay-amount").value);
+    const billPinNumber = parseInt(document.getElementById("bill-pin-number").value);
+    if(paySelect === "Select Pay"){
+        alert("Fill-Up the select option");
+        return;
+    }
+    if(billerNumber.length < 11){
+        alert("Provide valid biller account number");
+        return;
+    }
+    if(isNaN(payAmount)){
+        alert("Provide valid amount");
+        return;
+    }
+    if(billPinNumber !== setPin){
+        alert("Provide valid pin");
+        return;
+    }
+
+    const remainingBalance = availableBalance - payAmount;
+    document.getElementById("available-balance").innerText = remainingBalance;
+
 })
 
 
@@ -58,7 +148,7 @@ document.getElementById("btn-cash-out").addEventListener("click",function(){
 
 // transfer 
 document.getElementById("btn-transfer").addEventListener("click",function(){
-   cashOutSection.style.display = "none"
+    cashOutSection.style.display = "none"
     transferMoneySection.style.display = "block"
     getBonusSection.style.display = "none"
     payBillSection.style.display = "none"
